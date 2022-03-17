@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CalculoMator</string>
+    <string name="button_play">Play</string>
+    <string name="textView_choosegamemode">Choose a Gamemode</string>
+    <string name="button_classic">CLASSIC</string>
+    <string name="button_chrono">CHRONO</string>
+    <string name="button_survival">SURVIVAL</string>
+    <string name="button_infinite">INFINITE</string>
+    <string name="button_scores">SCORES</string>
+    <string name="textView_Brain">Train your brain with different game modes based on mental calculation</string>
+</resources>

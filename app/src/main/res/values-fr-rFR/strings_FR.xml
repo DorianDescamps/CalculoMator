@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CalculoMator</string>
+    <string name="button_play">Jouer</string>
+    <string name="textView_choosegamemode">Choisisez un mode de jeu</string>
+    <string name="button_classic">CLASSIQUE</string>
+    <string name="button_chrono">CHRONOMÉTRÉ</string>
+    <string name="button_survival">SURVIE</string>
+    <string name="button_infinite">INFINI</string>
+    <string name="button_scores">SCORES</string>
+    <string name="textView_Brain">Entrainez votre cerveau avec differents modes de jeux basés sur le calcul mental</string>
+</resources>
