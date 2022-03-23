@@ -27,7 +27,7 @@ public class ClassicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_survival);
+        setContentView(R.layout.activity_classic);
 
         textViewAnswer = findViewById(R.id.textView_Answer);
         textViewQuestion = findViewById(R.id.textView_Question);

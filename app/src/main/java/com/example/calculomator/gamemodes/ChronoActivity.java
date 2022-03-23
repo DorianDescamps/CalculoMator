@@ -24,7 +24,7 @@ public class ChronoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_survival);
+        setContentView(R.layout.activity_chrono);
 
         textViewAnswer = findViewById(R.id.textView_Answer);
         textViewQuestion = findViewById(R.id.textView_Question);
