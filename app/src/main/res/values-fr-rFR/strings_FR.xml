@@ -10,4 +10,7 @@
     <string name="button_scores">SCORES</string>
     <string name="textView_Brain">Entrainez votre cerveau avec differents modes de jeux basés sur le calcul mental</string>
     <string name="message_valeur_trop_grande"> Valeur trop grande</string>
+    <string name="valeur_correcte"> Valeur Correcte !</string>
+    <string name="valeur_incorrecte"> Valeur Incorrecte !</string>
+    <string name="view_score"> Score :</string>
 </resources>

@@ -69,6 +69,8 @@ public class SurvivalActivity extends AppCompatActivity {
         Button button_confirm = findViewById(R.id.button_confirm);
         button_confirm.setOnClickListener(view -> generateNumber());
 
+        generateNumber();
+
     }
 
     private void ajouterNombre(Integer valeur){
