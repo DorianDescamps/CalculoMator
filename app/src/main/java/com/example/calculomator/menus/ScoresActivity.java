@@ -1,8 +1,10 @@
-package com.example.calculomator;
+package com.example.calculomator.menus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.calculomator.R;
 
 public class ScoresActivity extends AppCompatActivity {
 
