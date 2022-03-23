@@ -119,10 +119,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="9" />
-
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -153,8 +153,12 @@
             android:id="@+id/button_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:iconGravity="textStart"
             app:icon="@android:drawable/ic_input_delete"
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
             tools:ignore="SpeakableTextPresentCheck" />
 
 

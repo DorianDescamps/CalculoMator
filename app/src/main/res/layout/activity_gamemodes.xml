@@ -23,47 +23,33 @@
             android:gravity="center_horizontal"
             android:text="@string/textView_choosegamemode" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/button_classic"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button_classic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/button_classic" />
-
-            <Button
-                android:id="@+id/button_chrono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/button_chrono" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:text="@string/button_classic" />
 
-            <Button
-                android:id="@+id/button_survival"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/button_survival" />
+        <Button
+            android:id="@+id/button_chrono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_chrono" />
 
-            <Button
-                android:id="@+id/button_infinite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/button_infinite" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/button_survival"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_survival" />
+
+        <Button
+            android:id="@+id/button_infinite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_infinite" />
 
         <Button
             android:id="@+id/button_scores"
@@ -71,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_scores" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
