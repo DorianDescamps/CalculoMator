@@ -7,15 +7,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculomator.R;
-import com.example.calculomator.model.TypeOperationEnum;
+
+import java.util.Random;
 
 
 public class SurvivalActivity extends AppCompatActivity {
-    private Long premierElement =0L;
-    private Long deuxiemeElement=0L;
-    private TypeOperationEnum typeOperationEnum = null;
-    private TextView textViewCalcul;
-    private Long BORNE_HAUTE = 9999L;
+    private Long answer = 0L;
+    private Integer number1 = 0;
+    private Integer number2 = 0;
+    private String question = "";
+    private TextView textViewAnswer;
+    private TextView textViewQuestion;
     //private CalculService calculService;
 
     @Override
@@ -23,7 +25,8 @@ public class SurvivalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survival);
 
-        textViewCalcul = findViewById(R.id.textView_Answer);
+        textViewAnswer = findViewById(R.id.textView_Answer);
+        textViewQuestion = findViewById(R.id.textView_Question);
 
         //calculService = new CalculService(new CalculDao(new ComputeBaseHelper(this)));
 
@@ -57,44 +60,52 @@ public class SurvivalActivity extends AppCompatActivity {
         Button bouton0 = findViewById(R.id.button_0);
         bouton0.setOnClickListener(view -> ajouterNombre(0));
 
-        /*Button boutonAdd = findViewById(R.id.button_add);
-        boutonAdd.setOnClickListener(view -> ajouteTypeOperation(TypeOperationEnum.ADD));
+        Button button_minus = findViewById(R.id.button_minus);
+        button_minus.setOnClickListener(view -> minusNumber());
 
-        Button boutonSubstract = findViewById(R.id.button_substract);
-        boutonSubstract.setOnClickListener(view -> ajouteTypeOperation(TypeOperationEnum.SUBSTRACT));
+        Button button_delete = findViewById(R.id.button_delete);
+        button_delete.setOnClickListener(view -> videTextViewCalcul());
 
-        Button boutonDivide = findViewById(R.id.button_divide);
-        boutonDivide.setOnClickListener(view -> ajouteTypeOperation(TypeOperationEnum.DIVIDE));
+        Button button_confirm = findViewById(R.id.button_confirm);
+        button_confirm.setOnClickListener(view -> generateNumber());
 
-        Button boutonMultiply = findViewById(R.id.button_multiply);
-        boutonMultiply.setOnClickListener(view -> ajouteTypeOperation(TypeOperationEnum.MULTIPLY));*/
     }
 
     private void ajouterNombre(Integer valeur){
-        if(typeOperationEnum == null){
-            if(10*premierElement+valeur > BORNE_HAUTE){
-                Toast.makeText(this,getString(R.string.message_valeur_trop_grande),Toast.LENGTH_LONG).show();
-            }else{
-                premierElement = 10 * premierElement+valeur;
-            }
+        Long maxValue = 99999999L;
+        if (10 * answer + valeur > maxValue){
+            Toast.makeText(this, getString(R.string.message_valeur_trop_grande), Toast.LENGTH_LONG).show();
         }else{
-            if(10*deuxiemeElement+valeur > BORNE_HAUTE){
-                Toast.makeText(this,getString(R.string.message_valeur_trop_grande),Toast.LENGTH_LONG).show();
-            }else{
-                deuxiemeElement = 10 * deuxiemeElement+valeur;
-            }
+            answer = 10 * answer+valeur;
         }
+        majTextView();
+    }
+
+    private void generateNumber()
+    {
+        number1 = new Random().nextInt(100);
+        number2 = new Random().nextInt(100);
+        int result = number1 + number2;
+        question = number1.toString() + "+" + number2.toString();
+        textViewQuestion.setText(question.toString());
+    }
+
+    private void minusNumber()
+    {
+        answer *= -1;
         majTextView();
     }
 
     private void majTextView() {
         String valeurAAfficher = "";
-        if(typeOperationEnum == null){
-            valeurAAfficher = premierElement.toString();
-        }else{
-            valeurAAfficher = premierElement + " "+ typeOperationEnum.getSymbol()+" "+ deuxiemeElement;
-        }
-        textViewCalcul.setText(valeurAAfficher);
+        valeurAAfficher = answer.toString();
+        textViewAnswer.setText(valeurAAfficher);
+    }
+
+    private boolean videTextViewCalcul() {
+        textViewAnswer.setText("");
+        answer = 0L;
+        return true;
     }
 
 }
