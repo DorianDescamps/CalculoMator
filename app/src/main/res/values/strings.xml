@@ -8,4 +8,5 @@
     <string name="button_infinite">INFINITE</string>
     <string name="button_scores">SCORES</string>
     <string name="textView_Brain">Train your brain with different game modes based on mental calculation</string>
+    <string name="message_valeur_trop_grande"> Value too high</string>
 </resources>
