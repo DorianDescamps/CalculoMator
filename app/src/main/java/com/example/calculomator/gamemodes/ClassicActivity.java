@@ -2,27 +2,29 @@ package com.example.calculomator.gamemodes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculomator.R;
+import com.example.calculomator.menus.GamemodesActivity;
 
 import java.util.Random;
 
 public class ClassicActivity extends AppCompatActivity {
-
-    private Long answer = 0L;
     private Integer number1 = 0;
     private Integer number2 = 0;
+    private Integer errors = 3;
+    private Long answer = 0L;
     private Long result = 0L;
     private String question = "";
     private TextView textViewAnswer;
     private TextView textViewQuestion;
     private TextView textViewScore;
+    private TextView textViewErrors;
     private Integer score = 0;
-    //private CalculService calculService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,10 @@ public class ClassicActivity extends AppCompatActivity {
         textViewAnswer = findViewById(R.id.textView_Answer);
         textViewQuestion = findViewById(R.id.textView_Question);
         textViewScore = findViewById(R.id.textView_Score);
+        textViewErrors = findViewById(R.id.textView_Errors);
+
+        textViewScore.setText(getString(R.string.view_score, score));
+        textViewErrors.setText(getString(R.string.view_errors, errors));
 
         Button bouton1 = findViewById(R.id.button_1);
         bouton1.setOnClickListener(view -> ajouterNombre(1));
@@ -103,18 +109,25 @@ public class ClassicActivity extends AppCompatActivity {
             generateNumber();
             videTextViewCalcul();
             score++;
-            String scoreString = "Score : " + score.toString();
-            textViewScore.setText(scoreString);
+            textViewScore.setText(getString(R.string.view_score, score));
         }
         else
         {
             Toast.makeText(this, getString(R.string.valeur_incorrecte), Toast.LENGTH_LONG).show();
             generateNumber();
             videTextViewCalcul();
-            score -= 2;
-            String scoreString = "Score : " + score.toString();
-            textViewScore.setText(scoreString);
+            errors--;
+            textViewErrors.setText(getString(R.string.view_errors, errors));
+            if (errors == 0)
+            {
+                endGame();
+            }
         }
+    }
+
+    private void endGame() {
+        Intent intent = new Intent(this, GamemodesActivity.class);
+        startActivity(intent);
     }
 
     private void minusNumber()
