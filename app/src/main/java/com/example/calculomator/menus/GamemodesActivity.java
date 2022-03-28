@@ -29,8 +29,9 @@ public class GamemodesActivity extends AppCompatActivity {
 
         Button buttonChrono = findViewById(R.id.button_chrono);
         buttonChrono.setOnClickListener(view -> openChronoActivity());
-
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
@@ -50,6 +51,8 @@ public class GamemodesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ChronoActivity.class);
         startActivity(intent);
     }
+
+
 
     private void openClassicActivity() {
         Intent intent = new Intent(this, ClassicActivity.class);

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center"
-            android:hint="Votre Nom"
+            android:hint="@string/urname"
             android:inputType="textPersonName" />
 
         <LinearLayout
@@ -42,15 +42,14 @@
                 android:id="@+id/textView_addScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
         </LinearLayout>
 
         <Button
             android:id="@+id/button_addData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enregistrer" />
+            android:text="@string/save" />
     </LinearLayout>
 
     <ScrollView

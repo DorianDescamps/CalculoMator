@@ -29,7 +29,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Calcul"
             android:textSize="60sp" />
 
         <TextView
@@ -37,7 +36,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Réponse"
             android:textSize="48sp" />
 
     </LinearLayout>
@@ -193,7 +191,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/LinearLayout4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -244,11 +241,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end" />
+
+            <Space
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
@@ -266,20 +273,13 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <Space
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
+
         </LinearLayout>
 
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/button_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="End"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="239dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

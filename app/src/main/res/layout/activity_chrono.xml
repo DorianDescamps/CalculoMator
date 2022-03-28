@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center|fill_vertical"
-            android:text="TempsRestant"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -49,7 +48,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Calcul"
             android:textSize="60sp" />
 
         <TextView
@@ -57,7 +55,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Réponse"
             android:textSize="48sp" />
 
     </LinearLayout>

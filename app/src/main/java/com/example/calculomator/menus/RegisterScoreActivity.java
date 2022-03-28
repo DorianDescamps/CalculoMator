@@ -97,7 +97,7 @@ public class RegisterScoreActivity extends AppCompatActivity {
         }
         else {
             while (cursor.moveToNext()) {
-                scores.add(cursor.getString(1) + " : " + cursor.getString(2) + " - " + cursor.getString(3) + getString(R.string.points));
+                scores.add(cursor.getString(1) + " : " + cursor.getString(2) + " - " + cursor.getString(3) + " " +getString(R.string.points));
             }
             adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, scores);
             userList.setAdapter(adapter);
