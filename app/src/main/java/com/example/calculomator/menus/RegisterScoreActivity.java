@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculomator.R;
-import com.example.calculomator.database.DataBaseHelper;
 import com.example.calculomator.database.LeaderboardBaseHelper;
 
 public class RegisterScoreActivity extends AppCompatActivity {
@@ -26,9 +26,9 @@ public class RegisterScoreActivity extends AppCompatActivity {
 
         db = new LeaderboardBaseHelper(this);
 
-        add_data = (Button) findViewById(R.id.add_data);
-        add_name = (EditText) findViewById(R.id.add_name);
-        add_score = (EditText) findViewById(R.id.add_score);
+        add_data = (Button) findViewById(R.id.button_addData);
+        add_name = (EditText) findViewById(R.id.editText_addName);
+        add_score = (TextView) findViewById(R.id.textView_addScore);
 
         add_data.setOnClickListener(new View.OnClickListener() {
             @Override
