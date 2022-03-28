@@ -27,13 +27,6 @@ public class GamemodesActivity extends AppCompatActivity {
         Button buttonChrono = findViewById(R.id.button_chrono);
         buttonChrono.setOnClickListener(view -> openChronoActivity());
 
-        Button buttonScores = findViewById(R.id.button_scores);
-        buttonScores.setOnClickListener(view -> openScoresActivity());
-    }
-
-    private void openScoresActivity() {
-        Intent intent = new Intent(this, ScoresActivity.class);
-        startActivity(intent);
     }
 
     private void openChronoActivity() {

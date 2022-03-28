@@ -17,4 +17,7 @@
     <string name="result"> Résultat </string>
     <string name="time"> Temps Écoulé ! </string>
     <string name="textView_Devs">Développé par :</string>
+    <string name="textView_LanguageAvailable">Langues Disponibles</string>
+    <string name="Score_Saved">Score enregistré</string>
+    <string name="Error_Saved">Erreur lors de l\'enregistrement !</string>
 </resources>

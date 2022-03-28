@@ -13,9 +13,6 @@
             android:name=".menus.RegisterScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".menus.ScoresActivity"
-            android:exported="false" />
-        <activity
             android:name=".gamemodes.InfiniteActivity"
             android:exported="false" />
         <activity

@@ -63,7 +63,7 @@ public class RegisterScoreActivity extends AppCompatActivity {
                 String name = add_name.getText().toString();
                 int score = Integer.parseInt(add_score.getText().toString());
                 if (name.length() > 0 && db.insertData(gamemode, name, score)) {
-                    Toast.makeText(RegisterScoreActivity.this, "Score enregistré !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterScoreActivity.this, getString(R.string.Score_Saved), Toast.LENGTH_SHORT).show();
                     add_name.setText("");
                     add_score.setText("");
                     viewData();
@@ -77,7 +77,7 @@ public class RegisterScoreActivity extends AppCompatActivity {
                     }, 10000);
 
                 } else {
-                        Toast.makeText(RegisterScoreActivity.this, "Erreur lors de l'enregistrement !", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterScoreActivity.this, getString(R.string.Error_Saved), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
