@@ -2,6 +2,7 @@ package com.example.calculomator.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -22,6 +23,7 @@ public abstract class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(getCreationSql());
+//        db.execSQL(getDeleteSql());
     }
 
     @Override
@@ -48,5 +50,13 @@ public abstract class DataBaseHelper extends SQLiteOpenHelper {
         long result = db.insert("Scores", null, contentValues);
 
         return result != -1; // Si result = -1 , la donnée n'est pas envoyée
+    }
+
+    public Cursor viewData()
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM Scores ORDER BY Score DESC";
+
+        return db.rawQuery(query, null);
     }
 }

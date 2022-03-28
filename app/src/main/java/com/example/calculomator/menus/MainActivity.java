@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.example.calculomator.R;
+import com.example.calculomator.database.LeaderboardBaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
