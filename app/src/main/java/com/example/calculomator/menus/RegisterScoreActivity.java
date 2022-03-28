@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -61,7 +62,15 @@ public class RegisterScoreActivity extends AppCompatActivity {
                     add_name.setText("");
                     add_score.setText("");
                     viewData();
-//                    returnToMenu();
+                    new Handler().postDelayed(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            returnToMenu();
+                        }
+                    }, 5000);
+
                 } else {
                         Toast.makeText(RegisterScoreActivity.this, "Erreur lors de l'enregistrement !", Toast.LENGTH_SHORT).show();
                     }
