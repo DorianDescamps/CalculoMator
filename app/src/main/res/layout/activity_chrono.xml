@@ -38,6 +38,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutChrono">
 
         <TextView
+            android:id="@+id/textView_ScoreChrono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="" />
+
+        <TextView
             android:id="@+id/textView_Question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

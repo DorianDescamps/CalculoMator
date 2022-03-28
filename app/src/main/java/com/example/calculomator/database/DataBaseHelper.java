@@ -40,14 +40,15 @@ public abstract class DataBaseHelper extends SQLiteOpenHelper {
         onUpgrade(db, oldVersion, newVersion);
     }
 
-    public boolean insertData (String name, int score)
+    public boolean insertData (String gamemode, String name, int score)
     {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name", name);
+        contentValues.put("Gamemode", gamemode);
         contentValues.put("Score", score);
 
-        long result = db.insert("Scores", null, contentValues);
+        long result = db.insert("Leaderboard", null, contentValues);
 
         return result != -1; // Si result = -1 , la donnée n'est pas envoyée
     }
@@ -55,7 +56,7 @@ public abstract class DataBaseHelper extends SQLiteOpenHelper {
     public Cursor viewData()
     {
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM Scores ORDER BY Score DESC";
+        String query = "SELECT * FROM Leaderboard ORDER BY Score DESC";
 
         return db.rawQuery(query, null);
     }

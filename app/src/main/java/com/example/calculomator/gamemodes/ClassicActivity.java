@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculomator.R;
-import com.example.calculomator.menus.GamemodesActivity;
 import com.example.calculomator.menus.RegisterScoreActivity;
 
 import java.util.Random;
@@ -36,7 +35,7 @@ public class ClassicActivity extends AppCompatActivity {
 
         textViewAnswer = findViewById(R.id.textView_Answer);
         textViewQuestion = findViewById(R.id.textView_Question);
-        textViewScore = findViewById(R.id.textView_Score);
+        textViewScore = findViewById(R.id.textView_ScoreClassic);
         textViewErrors = findViewById(R.id.textView_Errors);
         textViewCountdown = findViewById(R.id.textView_Countdown);
 
@@ -188,7 +187,8 @@ public class ClassicActivity extends AppCompatActivity {
 
     private void endGame() {
         Intent intent = new Intent(this, RegisterScoreActivity.class);
-        intent.putExtra("score", score.toString());
+        intent.putExtra("Score", score.toString());
+        intent.putExtra("Gamemode", "Classic");
         startActivity(intent);
     }
 

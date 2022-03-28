@@ -11,15 +11,16 @@ public class LeaderboardBaseHelper extends DataBaseHelper {
 
     @Override
     protected String getCreationSql() {
-        return "CREATE TABLE IF NOT EXISTS Scores ("+
+        return "CREATE TABLE IF NOT EXISTS Leaderboard ("+
                 "id" + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "Gamemode" + " VARCHAR(255) NOT NULL," +
                 "Name" + " VARCHAR(255) NOT NULL," +
                 "Score" + " INTEGER NOT NULL " +
                 ")";
     }
 
     @Override
-    protected String getDeleteSql() {
-        return "DROP TABLE Scores";
+    public String getDeleteSql() {
+        return "DROP TABLE Leaderboard";
     }
 }
