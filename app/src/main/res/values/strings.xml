@@ -4,7 +4,6 @@
     <string name="textView_choosegamemode">Choose a Gamemode</string>
     <string name="button_classic">CLASSIC</string>
     <string name="button_chrono">CHRONO</string>
-    <string name="button_survival">SURVIVAL</string>
     <string name="button_infinite">INFINITE</string>
     <string name="button_scores">SCORES</string>
     <string name="textView_Brain">Train your brain with different game modes based on mental calculation</string>
@@ -19,4 +18,11 @@
     <string name="textView_LanguageAvailable">Language available :</string>
     <string name="Score_Saved">Score Saved !</string>
     <string name="Error_Saved">Error when saving !</string>
+    <string name="nodata">No data</string>
+    <string name="points">Points</string>
+    <string name="classic">Classic</string>
+    <string name="chrono">Chrono</string>
+    <string name="infinite">Infinite</string>
+    <string name="score">Score</string>
+    <string name="gamemode">Game mode</string>
 </resources>

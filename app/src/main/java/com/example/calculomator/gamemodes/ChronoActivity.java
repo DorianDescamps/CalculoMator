@@ -177,7 +177,7 @@ public class ChronoActivity extends AppCompatActivity {
     private void endGame() {
         Intent intent = new Intent(this, RegisterScoreActivity.class);
         intent.putExtra("Score", score.toString());
-        intent.putExtra("Gamemode", "Chrono");
+        intent.putExtra("Gamemode", getString(R.string.chrono));
         startActivity(intent);
     }
 

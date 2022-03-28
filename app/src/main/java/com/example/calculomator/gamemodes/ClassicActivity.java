@@ -188,7 +188,7 @@ public class ClassicActivity extends AppCompatActivity {
     private void endGame() {
         Intent intent = new Intent(this, RegisterScoreActivity.class);
         intent.putExtra("Score", score.toString());
-        intent.putExtra("Gamemode", "Classic");
+        intent.putExtra("Gamemode", getString(R.string.classic));
         startActivity(intent);
     }
 

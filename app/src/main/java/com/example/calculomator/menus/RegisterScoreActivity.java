@@ -93,11 +93,11 @@ public class RegisterScoreActivity extends AppCompatActivity {
         Cursor cursor = db.viewData();
 
         if (cursor.getCount() == 0) {
-            Toast.makeText(this, "Aucune donnée", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.nodata), Toast.LENGTH_SHORT).show();
         }
         else {
             while (cursor.moveToNext()) {
-                scores.add(cursor.getString(1) + " : " + cursor.getString(2) + " - " + cursor.getString(3) + " points");
+                scores.add(cursor.getString(1) + " : " + cursor.getString(2) + " - " + cursor.getString(3) + getString(R.string.points));
             }
             adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, scores);
             userList.setAdapter(adapter);

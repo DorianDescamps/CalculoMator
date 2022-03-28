@@ -125,7 +125,7 @@ public class InfiniteActivity extends AppCompatActivity {
     private void endGame() {
         Intent intent = new Intent(this, RegisterScoreActivity.class);
         intent.putExtra("Score", score.toString());
-        intent.putExtra("Gamemode", "Infinite");
+        intent.putExtra("Gamemode", getString(R.string.infinite));
         startActivity(intent);
     }
 
