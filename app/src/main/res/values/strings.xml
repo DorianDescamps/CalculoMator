@@ -15,4 +15,5 @@
     <string name="view_errors"> Errors remaining : %1$d </string>
     <string name="result"> Result </string>
     <string name="time"> Time Elapsed ! </string>
+    <string name="textView_Devs">Developed by :</string>
 </resources>

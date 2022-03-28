@@ -16,4 +16,5 @@
     <string name="view_errors"> Erreurs restantes : %1$d </string>
     <string name="result"> Résultat </string>
     <string name="time"> Temps Écoulé ! </string>
+    <string name="textView_Devs">Développé par :</string>
 </resources>
