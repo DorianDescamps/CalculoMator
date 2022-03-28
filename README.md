@@ -22,8 +22,7 @@ Il y a 3 modes de jeux :
       - Il y a un bouton fin pour arrêter l'activité, et pouvoir enregistrer son résultat
       
 
-La base de donnés est visualisable a la fin d'un mode de jeu, pendant 10 secondes après avoir rentré son pseudo, après ces 10 secondes, l'activité se ferme et on
-retourne a l'écran des modes de jeux.
+La base de donnés est visualisable sous forme de liste avec le mode de jeu, le pseudo et le score obtenu a la fin d'un mode de jeu, pendant 10 secondes après avoir rentré son pseudo, après ces 10 secondes, l'activité se ferme et on retourne a l'écran des modes de jeux.
 
 L'activité crédits, est accéssible depuis l'activité des modes de jeux dans la toolbar.
 
