@@ -15,7 +15,7 @@
     <string name="result"> Result </string>
     <string name="time"> Time Elapsed ! </string>
     <string name="textView_Devs">Developed by :</string>
-    <string name="textView_LanguageAvailable">Language available :</string>
+    <string name="textView_LanguageAvailable">Languages available :</string>
     <string name="Score_Saved">Score Saved !</string>
     <string name="Error_Saved">Error when saving !</string>
     <string name="nodata">No data</string>
