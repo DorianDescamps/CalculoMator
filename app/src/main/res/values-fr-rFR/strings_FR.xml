@@ -14,4 +14,6 @@
     <string name="valeur_incorrecte"> Valeur Incorrecte !</string>
     <string name="view_score"> Score : %1$d </string>
     <string name="view_errors"> Erreurs restantes : %1$d </string>
+    <string name="result"> Résultat </string>
+    <string name="time"> Temps Écoulé ! </string>
 </resources>

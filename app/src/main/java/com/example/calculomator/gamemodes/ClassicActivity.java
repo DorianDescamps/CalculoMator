@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,16 +15,17 @@ import com.example.calculomator.menus.GamemodesActivity;
 import java.util.Random;
 
 public class ClassicActivity extends AppCompatActivity {
-    private Integer number1 = 0;
-    private Integer number2 = 0;
     private Integer errors = 3;
     private Long answer = 0L;
     private Long result = 0L;
-    private String question = "";
     private TextView textViewAnswer;
     private TextView textViewQuestion;
     private TextView textViewScore;
     private TextView textViewErrors;
+    private TextView textViewCountdown;
+    private CountDownTimer countDownTimer;
+    private long timeLeftInMilliseconds = 10000;
+    private boolean timerRunning;
     private Integer score = 0;
 
     @Override
@@ -35,7 +37,9 @@ public class ClassicActivity extends AppCompatActivity {
         textViewQuestion = findViewById(R.id.textView_Question);
         textViewScore = findViewById(R.id.textView_Score);
         textViewErrors = findViewById(R.id.textView_Errors);
+        textViewCountdown = findViewById(R.id.textView_Countdown);
 
+        textViewAnswer.setText(getString(R.string.result));
         textViewScore.setText(getString(R.string.view_score, score));
         textViewErrors.setText(getString(R.string.view_errors, errors));
 
@@ -79,11 +83,61 @@ public class ClassicActivity extends AppCompatActivity {
         button_confirm.setOnClickListener(view -> verifyResult());
 
         generateNumber();
+        timerRunning = false;
+        switchCountdown();
 
     }
 
+    public void switchCountdown()
+    {
+        if (timerRunning)
+        {
+            stopTimer();
+        }
+        else
+        {
+            startTimer();
+        }
+    }
+
+    public void startTimer()
+    {
+        countDownTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+            @Override
+            public void onTick(long l) {
+                timeLeftInMilliseconds = l;
+                updateTimer();
+            }
+
+            @Override
+            public void onFinish() {
+                Toast.makeText(getApplicationContext(), getString(R.string.time), Toast.LENGTH_LONG).show();
+                endGame();
+            }
+        }.start();
+
+        timerRunning = true;
+    }
+
+    public void stopTimer()
+    {
+        countDownTimer.cancel();
+        timerRunning = false;
+    }
+
+    public void updateTimer()
+    {
+        int secs = (int) timeLeftInMilliseconds / 1000;
+
+        String timeLeftText = "";
+
+        timeLeftText += secs;
+
+        textViewCountdown.setText(timeLeftText);
+    }
+
     private void ajouterNombre(Integer valeur){
-        Long maxValue = 99999999L;
+        long maxValue = 99999999L;
         if (10L * answer + valeur > maxValue){
             Toast.makeText(this, getString(R.string.message_valeur_trop_grande), Toast.LENGTH_LONG).show();
         }else{
@@ -94,10 +148,10 @@ public class ClassicActivity extends AppCompatActivity {
 
     private void generateNumber()
     {
-        number1 = new Random().nextInt(100);
-        number2 = new Random().nextInt(100);
+        int number1 = new Random().nextInt(100);
+        int number2 = new Random().nextInt(100);
         result = (long) number1 + number2;
-        question = number1.toString() + "+" + number2.toString();
+        String question = Integer.toString(number1) + "+" + Integer.toString(number2);
         textViewQuestion.setText(question);
     }
 
@@ -108,7 +162,11 @@ public class ClassicActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.valeur_correcte), Toast.LENGTH_LONG).show();
             generateNumber();
             videTextViewCalcul();
+            textViewAnswer.setText(getString(R.string.result));
             score++;
+            stopTimer();
+            timeLeftInMilliseconds = 10000;
+            startTimer();
             textViewScore.setText(getString(R.string.view_score, score));
         }
         else
@@ -116,6 +174,7 @@ public class ClassicActivity extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.valeur_incorrecte), Toast.LENGTH_LONG).show();
             generateNumber();
             videTextViewCalcul();
+            textViewAnswer.setText(getString(R.string.result));
             errors--;
             textViewErrors.setText(getString(R.string.view_errors, errors));
             if (errors == 0)
