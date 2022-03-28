@@ -20,6 +20,6 @@ public class LeaderboardBaseHelper extends DataBaseHelper {
 
     @Override
     protected String getDeleteSql() {
-        return null;
+        return "DROP TABLE Scores";
     }
 }
