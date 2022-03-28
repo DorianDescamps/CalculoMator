@@ -23,6 +23,6 @@
     <string name="classic">Classic</string>
     <string name="chrono">Chrono</string>
     <string name="infinite">Infinite</string>
-    <string name="score">Score</string>
-    <string name="gamemode">Game mode</string>
+    <string name="functions">Functions</string>
+    <string name="blablafunctions">We have added 2 game modes in addition to the classic mode which contains a descending timer. The infinite mode is a game mode that never ends. The timed mode is a game mode that ends after a certain time. We have integrated a list to visualize the database with the scores of the players.</string>
 </resources>

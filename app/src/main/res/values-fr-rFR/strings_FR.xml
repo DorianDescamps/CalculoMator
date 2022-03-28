@@ -24,4 +24,6 @@
     <string name="infinite">Infini</string>
     <string name="classic">Classique</string>
     <string name="chrono">Chronométré</string>
+    <string name="functions">Fonctions</string>
+    <string name="blablafunctions">On a ajouté 2 modes de jeux en plus du mode classique qui lui contient un timer descendant. Le mode infini est un mode de jeu qui ne se termine jamais. Le mode chronométré est un mode de jeu qui se termine après un certain temps. On a intégré une liste pour visualiser a base de données avec les scores des joueurs.</string>
 </resources>
