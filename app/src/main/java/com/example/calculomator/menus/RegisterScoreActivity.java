@@ -69,7 +69,7 @@ public class RegisterScoreActivity extends AppCompatActivity {
                         {
                             returnToMenu();
                         }
-                    }, 5000);
+                    }, 10000);
 
                 } else {
                         Toast.makeText(RegisterScoreActivity.this, "Erreur lors de l'enregistrement !", Toast.LENGTH_SHORT).show();
