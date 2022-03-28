@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoMator">
         <activity
-            android:name=".menus.AproposActivity"
+            android:name=".menus.RegisterScoreActivity"
             android:exported="false" />
         <activity
             android:name=".menus.ScoresActivity"
