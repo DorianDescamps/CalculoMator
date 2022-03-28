@@ -1,5 +1,6 @@
 package com.example.calculomator.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -35,5 +36,17 @@ public abstract class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
+    }
+
+    public boolean insertData (String name, int score)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Name", name);
+        contentValues.put("Score", score);
+
+        long result = db.insert("Scores", null, contentValues);
+
+        return result != -1; // Si result = -1 , la donnée n'est pas envoyée
     }
 }

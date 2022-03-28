@@ -11,7 +11,7 @@ public class LeaderboardBaseHelper extends DataBaseHelper {
 
     @Override
     protected String getCreationSql() {
-        return "CREATE TABLE IF NOT EXISTS scores ("+
+        return "CREATE TABLE IF NOT EXISTS Scores ("+
                 "id" + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "Name" + " VARCHAR(255) NOT NULL," +
                 "Score" + " INTEGER NOT NULL " +
