@@ -19,9 +19,6 @@
             android:name=".gamemodes.InfiniteActivity"
             android:exported="false" />
         <activity
-            android:name=".gamemodes.SurvivalActivity"
-            android:exported="false" />
-        <activity
             android:name=".gamemodes.ChronoActivity"
             android:exported="false" />
         <activity
