@@ -19,11 +19,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/textView_Errors"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:text="Erreurs restantes :" />
+
+        <TextView
             android:id="@+id/textView_Score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Score" />
+            android:text="Score :" />
 
         <TextView
             android:id="@+id/textView_Question"

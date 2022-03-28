@@ -28,8 +28,6 @@ public class SurvivalActivity extends AppCompatActivity {
         textViewAnswer = findViewById(R.id.textView_Answer);
         textViewQuestion = findViewById(R.id.textView_Question);
 
-        //calculService = new CalculService(new CalculDao(new ComputeBaseHelper(this)));
-
         Button bouton1 = findViewById(R.id.button_1);
         bouton1.setOnClickListener(view -> ajouterNombre(1));
 

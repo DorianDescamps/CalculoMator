@@ -12,5 +12,6 @@
     <string name="message_valeur_trop_grande"> Valeur trop grande</string>
     <string name="valeur_correcte"> Valeur Correcte !</string>
     <string name="valeur_incorrecte"> Valeur Incorrecte !</string>
-    <string name="view_score"> Score :</string>
+    <string name="view_score"> Score : %1$d </string>
+    <string name="view_errors"> Erreurs restantes : %1$d </string>
 </resources>
