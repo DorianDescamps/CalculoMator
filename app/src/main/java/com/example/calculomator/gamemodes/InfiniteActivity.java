@@ -2,24 +2,26 @@ package com.example.calculomator.gamemodes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.calculomator.R;
+import com.example.calculomator.menus.RegisterScoreActivity;
 
 import java.util.Random;
 
 public class InfiniteActivity extends AppCompatActivity {
 
     private Long answer = 0L;
-    private Integer number1 = 0;
-    private Integer number2 = 0;
-    private String question = "";
+    private Long result = 0L;
     private TextView textViewAnswer;
     private TextView textViewQuestion;
-    //private CalculService calculService;
+    private TextView textViewScore;
+    private Integer score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +30,10 @@ public class InfiniteActivity extends AppCompatActivity {
 
         textViewAnswer = findViewById(R.id.textView_Answer);
         textViewQuestion = findViewById(R.id.textView_Question);
+        textViewScore = findViewById(R.id.textView_ScoreInfinite);
 
-        //calculService = new CalculService(new CalculDao(new ComputeBaseHelper(this)));
+        textViewAnswer.setText(getString(R.string.result));
+        textViewScore.setText(getString(R.string.view_score, score));
 
         Button bouton1 = findViewById(R.id.button_1);
         bouton1.setOnClickListener(view -> ajouterNombre(1));
@@ -68,15 +72,18 @@ public class InfiniteActivity extends AppCompatActivity {
         button_delete.setOnClickListener(view -> videTextViewCalcul());
 
         Button button_confirm = findViewById(R.id.button_confirm);
-        button_confirm.setOnClickListener(view -> generateNumber());
+        button_confirm.setOnClickListener(view -> verifyResult());
+
+        Button button_end = findViewById(R.id.button_end);
+        button_end.setOnClickListener(view -> endGame());
 
         generateNumber();
 
     }
 
     private void ajouterNombre(Integer valeur){
-        Long maxValue = 99999999L;
-        if (10 * answer + valeur > maxValue){
+        long maxValue = 99999999L;
+        if (10L * answer + valeur > maxValue){
             Toast.makeText(this, getString(R.string.message_valeur_trop_grande), Toast.LENGTH_LONG).show();
         }else{
             answer = 10 * answer+valeur;
@@ -86,11 +93,40 @@ public class InfiniteActivity extends AppCompatActivity {
 
     private void generateNumber()
     {
-        number1 = new Random().nextInt(100);
-        number2 = new Random().nextInt(100);
-        int result = number1 + number2;
-        question = number1.toString() + "+" + number2.toString();
-        textViewQuestion.setText(question.toString());
+        int number1 = new Random().nextInt(100);
+        int number2 = new Random().nextInt(100);
+        result = (long) number1 + number2;
+        String question = Integer.toString(number1) + "+" + Integer.toString(number2);
+        textViewQuestion.setText(question);
+    }
+
+    private void verifyResult()
+    {
+        if (answer.equals(result))
+        {
+            Toast.makeText(this, getString(R.string.valeur_correcte), Toast.LENGTH_LONG).show();
+            generateNumber();
+            videTextViewCalcul();
+            textViewAnswer.setText(getString(R.string.result));
+            score++;
+            textViewScore.setText(getString(R.string.view_score, score));
+        }
+        else
+        {
+            Toast.makeText(this, getString(R.string.valeur_incorrecte), Toast.LENGTH_LONG).show();
+            generateNumber();
+            videTextViewCalcul();
+            textViewAnswer.setText(getString(R.string.result));
+            score--;
+            textViewScore.setText(getString(R.string.view_score, score));
+        }
+    }
+
+    private void endGame() {
+        Intent intent = new Intent(this, RegisterScoreActivity.class);
+        intent.putExtra("Score", score.toString());
+        intent.putExtra("Gamemode", "Infinite");
+        startActivity(intent);
     }
 
     private void minusNumber()
@@ -110,4 +146,5 @@ public class InfiniteActivity extends AppCompatActivity {
         answer = 0L;
         return true;
     }
+
 }
