@@ -22,7 +22,7 @@ public abstract  class BaseDao<T extends BaseEntity> {
 
     /**
      * @param entity : element a ajouter dans la base
-     * @return : l element créait avec son ID
+     * @return : l element créé avec son ID
      */
     public T create(T entity){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
