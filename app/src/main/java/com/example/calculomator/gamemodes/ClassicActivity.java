@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.calculomator.R;
 import com.example.calculomator.menus.GamemodesActivity;
+import com.example.calculomator.menus.RegisterScoreActivity;
 
 import java.util.Random;
 
@@ -180,12 +181,14 @@ public class ClassicActivity extends AppCompatActivity {
             if (errors == 0)
             {
                 endGame();
+                stopTimer();
             }
         }
     }
 
     private void endGame() {
-        Intent intent = new Intent(this, GamemodesActivity.class);
+        Intent intent = new Intent(this, RegisterScoreActivity.class);
+        intent.putExtra("score", score.toString());
         startActivity(intent);
     }
 

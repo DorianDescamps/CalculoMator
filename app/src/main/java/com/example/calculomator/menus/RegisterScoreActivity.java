@@ -3,6 +3,7 @@ package com.example.calculomator.menus;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,7 @@ public class RegisterScoreActivity extends AppCompatActivity {
 
     Button add_data;
     EditText add_name;
+    TextView add_score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,10 @@ public class RegisterScoreActivity extends AppCompatActivity {
         add_data = (Button) findViewById(R.id.button_addData);
         add_name = (EditText) findViewById(R.id.editText_addName);
         add_score = (TextView) findViewById(R.id.textView_addScore);
+
+        String score = getIntent().getStringExtra("score");
+
+        add_score.setText(score);
 
         add_data.setOnClickListener(new View.OnClickListener() {
             @Override
